@@ -4,7 +4,13 @@ import java.util.Scanner;
 public class webscraper {
     public static void main (String [] unused){
         String website = urlToString("http://erdani.com/tdpl/hamlet.txt");
-        System.out.println(website);
+        int count=0;
+        for(int i=0; i<website.length(); i++){
+            if(website.charAt(i)=='p'&&website.charAt(i+1)=='r'&&website.charAt(i+2)=='i'&&website.charAt(i+3)=='n'&&website.charAt(i+6)!='s'){
+                count++;
+            }
+        }
+        System.out.println(count);
     }
     /**
      * Retrieve contents from a URL and return them as a string.
